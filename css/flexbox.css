@@ -4,8 +4,25 @@
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 768px) {
+  .cabecalhoPrincipal .container {
+    flex-direction: column;
+    align-items: initial;
+  }
+}
 .cabecalhoPrincipal-nav {
   display: flex;
+}
+@media (max-width: 768px) {
+  .cabecalhoPrincipal-nav {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .cabecalhoPrincipal-nav-link-app {
+    order: -1;
+  }
 }
 
 /* Main */
@@ -14,8 +31,20 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
+@media (max-width: 768px) {
+  .conteudoPrincipal-cursos {
+    flex-direction: column;
+  }
+}
 .conteudoPrincipal-cursos-link {
   width: 23%;
+}
+@media (max-width: 768px) {
+  .conteudoPrincipal-cursos-link {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 .conteudoPrincipal-cursos-link:nth-child(4n) {
   margin-right: 0;
@@ -27,10 +56,44 @@
   margin-right: 0;
 }
 
+/* Video Sobre */
+.videoSobre .container {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .videoSobre .container {
+    flex-direction: column;
+  }
+}
+.videoSobre-video {
+  flex-grow: 1;
+  flex-shrink: 2;
+}
+@media (max-width: 768px) {
+  .videoSobre-video {
+    margin: 0 auto;
+  }
+}
+.videoSobre-sobre {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+}
+.videoSobre-sobre-list {
+  flex-grow: 1;
+}
+
 /* footer */
 .rodapePrincipal-patrocinadores .container {
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .rodapePrincipal-patrocinadores .container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .rodapePrincipal-patrocinadores-list {
   display: flex;
@@ -39,11 +102,27 @@
   width: 70%;
   margin-right: 5%;
 }
+@media (max-width: 768px) {
+  .rodapePrincipal-patrocinadores-list {
+    margin: 0;
+    width: 100%;
+  }
+}
 .rodapePrincipal-contatoForm {
   width: 25%;
 }
+@media (max-width: 768px) {
+  .rodapePrincipal-contatoForm {
+    width: 100%;
+  }
+}
 .rodapePrincipal-contatoForm-fieldset {
   display: flex;
+}
+@media (max-width: 768px) {
+  .rodapePrincipal-contatoForm-fieldset {
+    justify-content: center;
+  }
 }
 .rodapePrincipal-navMap-list {
   display: flex;
@@ -51,6 +130,11 @@
   flex-wrap: wrap;*/
   flex-flow: column wrap;
   height: 250px;
+}
+@media (max-width: 768px) {
+  .rodapePrincipal-navMap-list {
+    height: auto;
+  }
 }
 
 /*# sourceMappingURL=flexbox.css.map */

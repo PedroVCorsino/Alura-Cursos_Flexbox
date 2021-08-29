@@ -1,76 +1,159 @@
+// mixins para ajuste de tela
+@mixin phone {
+    @media (max-width: 768px) { @content; }        
+}
+
 /* header */
 .cabecalhoPrincipal {
     .container {
+        @include phone {
+            flex-direction: column;
+            align-items: initial;
+        }
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
     
     &-nav{
-        display: flex; 
+        @include phone{
+            flex-direction: column;
+            text-align: center;
+        }
+        display: flex;
+
+        &-link{
+
+            &-app{
+                @include phone {
+                    order: -1;
+                }
+            }
+        }
     }
 }
 
 /* Main */
 .conteudoPrincipal {
     &-cursos{
-       display: flex;
-       flex-wrap: wrap;
-       justify-content: space-between;
-       &-link {
-           width: 23%;
-           &:nth-child(4n) {
+        @include phone {
+            flex-direction: column;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &-link {
+            @include phone {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            width: 23%;
+           
+            &:nth-child(4n) {
                margin-right: 0;
-           }
-           &:nth-child(4n+1) {
+            }
+           
+            &:nth-child(4n+1) {
                 margin-left: 0;
             }
+            
             &:last-child {
                 margin-right: 0;
             }
+
+        }
+    }
+
+
+}
+
+/* Video Sobre */
+.videoSobre{
+
+    .container{
+        @include phone {
+            flex-direction: column;
+        }
+        display: flex;
+    }
+
+    &-video{
+        @include phone {
+            margin: 0 auto;
+        }
+        flex-grow: 1;
+        flex-shrink: 2;            
+    }
+
+    &-sobre{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 2;
+
+        &-list {
+            flex-grow: 1;
         }
     }
 }
 
+
 /* footer */
 .rodapePrincipal{
-    &-patrocinadores{
-        
+
+    &-patrocinadores{        
+
         .container{
+            @include phone {
+                flex-direction: column;
+                align-items: center;
+            }
             display: flex;
             justify-content: space-between;
         }
 
         &-list{
-          display: flex;  
-          align-items: center;
-          justify-content: space-around;
-          width: 70%;
-          margin-right: 5%;
+            @include phone {
+                margin: 0;
+                width: 100%;
+            }
+            display: flex;  
+            align-items: center;
+            justify-content: space-around;
+            width: 70%;
+            margin-right: 5%;
         }
     }
 
     &-contatoForm{
+        @include phone {
+            width: 100%;
+        }
         width: 25%;
     }
 
     &-contatoForm{
         &-fieldset{
+            @include phone {
+                justify-content: center;
+            }
             display: flex;
-        }
-    
+        }  
     }
-
           
     &-navMap {
             
         &-list {
+            @include phone {
+                height: auto;
+            }
             display: flex;
             /*flex-direction: column;
             flex-wrap: wrap;*/
             flex-flow: column wrap;
             height: 250px;
         }
-    }
-    
+    }  
 }
