@@ -11,6 +11,27 @@
     }
 }
 
+/* Main */
+.conteudoPrincipal {
+    &-cursos{
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       &-link {
+           width: 23%;
+           &:nth-child(4n) {
+               margin-right: 0;
+           }
+           &:nth-child(4n+1) {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
 /* footer */
 .rodapePrincipal{
     &-patrocinadores{
